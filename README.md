@@ -24,7 +24,7 @@ I didn't have time yet to add ARM template/POowershell to do configurations, but
 
 ## Limitations
 
-I've tried out the code above with several invoices and it seems to work very well for most of them. It struggles when the photos are white-on-white (a white invoice over a white background).
+I've tried out the code above with several invoices and it seems to work very well for most of them. It struggles when the photos are white-on-white (a white invoice over a white background), and in this case it won't work if the image has a skew.
 
 ## Samples
 
