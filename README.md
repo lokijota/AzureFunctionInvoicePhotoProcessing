@@ -20,14 +20,27 @@ All the image processing magic is done with ImageMagick/Magick.NET.
 
 ## Deployment
 
-I didn't have time yet to add ARM template/POowershell to do configurations, but I'll do so soon. Basically you need one Azure Function and one Azure Storage Account blob. I'm uploading photos using the Storage Explorer.
+I didn't have time yet to add ARM template/POowershell to do configurations, but I'll do so soon. Basically you need one Azure Function and one Azure Storage Account blob. I'm uploading photos using the Storage Explorer. I've uploaded a file called readme.settings.json with the application settings required for the function to work.
 
 ## Limitations
 
 I've tried out the code above with several invoices and it seems to work very well for most of them. It struggles when the photos are white-on-white (a white invoice over a white background).
 
+## Samples
+
+The table below shows some relevant images in the processing steps. All are scaled to the same horizontal width so that they fit. In the regions image, note the purple bounding box around the detected region.
+
+<table>
+  <tr><td>Original</td><td>After Otsu Threshold</td><td>Showing regions</td><td>Final</td></tr>
+  <tr>
+    <td ><img src="images/original.jpg" alt="Original photo" width="200" align="left" /></td>
+    <td><img src="images/after_otsu.jpg" alt="Original photo" width="200" align="left" /></td>
+    <td><img src="images/regions.jpg" alt="Original photo" width="200" align="left" /></td>
+    <td><img src="images/final.jpg" alt="Original photo" width="200" /></td></tr>
+</table>
+
 ## TODO
-- Add required configuration keys
+- Call Azure Cognitive Services to do OCR + Identify if an image rotations is needed
 - Script/automate the deployment
 - Rename the output file according to the metadata/content of the photo
 - Error handling (e.g., the file is not an image)
