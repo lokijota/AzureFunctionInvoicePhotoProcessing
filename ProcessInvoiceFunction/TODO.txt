@@ -1,54 +1,20 @@
 ﻿TO-DO:
-
+- Call cognitive services to do OCR (form recognizer/computer vision?)
+- rotate image if upside down or sideways
 - error handling in case it's not an image
-- handle the configurations and put in GitHub
 - repro the setup (why does funcions.json only have 1 binding?)
-- join-up regions if more than one
 - put minimum sizes in configuration & others as applicable
-
-
 - remove source file after processing
 - dynamically specify the name of the output file
-https://stackoverflow.com/questions/36428165/generating-names-for-output-blobs-for-an-azure-function
+	https://stackoverflow.com/questions/36428165/generating-names-for-output-blobs-for-an-azure-function
 - if saving a JPEG and the source was not JPEG, there will be a problem, the contents of the file won't match the extension => rename
 
 - Make the output width variable > based on a configuration
 - Make the output width variable > based on legibility
-- Call cognitive services to do OCR (form recognizer?)
 - Extract the date from the JPEG metadata and use that in the output filename
-- Quando faço deploy da função ela já ir associada ao appinsights em vez de fazer isso no site
+- When I deploy, carry along the AppInsights configuration instead of doing it in the Azure Portal
 https://docs.microsoft.com/en-us/azure/azure-functions/functions-monitoring
 
-
-DONE:
-- Nuget: instalei Magick.NET-Q8 x86 (functions em 32bits) >> tive de mudar para o AnyCPU por causa do tipo de build no projecto, dava warnings de compilação
-- integrate ImageMagick.NET: read image
-
-- look for skew and then rotate (gray scale)
-		border detection
-		hough transform (if all rectangles on an image have the same skew)
-		rectangle contour detection (connected component contour, then minimum area bounding rectangle)
-		https://stackoverflow.com/questions/3170501/how-can-i-detect-and-correct-skew-in-images
-
-		The skew detection script takes image file as input, then performs the following steps:
-			Converts the image to greyscale
-			Performs Canny Edge Detection on the Image
-			Calculates the Hough Transform values
-			Determines the peaks
-			Determines the deviation of each peaks from 45 degree angle
-			Segregates the detected peaks into bins
-			Chooses the probable skew angle using the value in the bins
-		https://github.com/kakul/Alyn
-- DONE: resize to 1200px
-- DONE specify jpeg write out quality
-- DONE: write out image
-
-- ImageMagick.NET pipeline:
-	- look for blobs:
-		increase contrast
-		use OtsuThreshold
-		count blobs min 500x500
-	- crop to the largest rectangle
 
 
 Nice to have:
