@@ -20,7 +20,7 @@ All the image processing magic is done with ImageMagick/Magick.NET.
 
 ## Deployment
 
-I didn't have time yet to add ARM template/POowershell to do configurations, but I'll do so soon. Basically you need one Azure Function and one Azure Storage Account blob. I'm uploading photos using the Storage Explorer. I've uploaded a file called readme.settings.json with the application settings required for the function to work.
+I didn't have time yet to add ARM template/Powershell to do configurations, but I'll do time permitting. Basically you need one Azure Function and one Azure Storage Account blob. I'm uploading photos using an hacked together Android app, but you can also use use Azure Storage Explorer. I've uploaded a file called readme.settings.json with the application settings required for the function to work.
 
 ## Limitations
 
